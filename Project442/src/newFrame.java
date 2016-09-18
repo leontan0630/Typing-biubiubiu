@@ -1,15 +1,26 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class newFrame {
 
 	private JFrame frame;
-
+	private JTextField textField;
+	private JTextField textField_1;
+	private static String userInput; 
+	private static String gameOutput;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void newWindow() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -33,9 +44,48 @@ public class newFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		gameOutput = "abc";
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(163, 62, 116, 22);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		textField.setText(gameOutput);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(163, 153, 116, 22);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		
+		//System.out.println("userInput "+userInput);
+		JButton btnCheck = new JButton("CHECK");
+		lblNewLabel_1 = new JLabel();
+		lblNewLabel_1.setBounds(163, 86, 116, 64);
+		frame.getContentPane().add(lblNewLabel_1);
+		btnCheck.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				userInput = textField_1.getText();
+				if(gameOutput.equals(userInput)){
+					lblNewLabel_1.setText("SUCCESS!!!!");
+					//textField_2.setText("pass");
+					}else{
+						lblNewLabel_1.setText("FAIL!!!!!");
+						//System.out.println();
+						//textField_2.setText("fail");
+					}
+			}
+		});
+		btnCheck.setBounds(291, 152, 97, 25);
+		frame.getContentPane().add(btnCheck);
+		
+		
+		
+		
+		
 	}
-
 }
