@@ -1,0 +1,22 @@
+date: September 21, 2016
+meeting_type: ta
+attendance: [jialuota, jiaqinlin, rundali, xiaofeili]
+absent: [N\A, N\A, N\A]
+excused_absences: [ # Any legitamite excuses for absent team members
+  {ubit: <ubit5>, : reason: Had class. This was known through a Doodle poll before scheduling the meeting.},
+  {ubit: <ubit6>, reason: Abducted by aliens 15 minutes before meeting}
+  ]
+task_progress: [ # All group members must be included here even if they haven't made any progress since the last meeting
+  {ubit: <jialuota>, progress: We had set up some tasks for sprint2}},
+  {ubit: <rundali>, progress: In charge of the animation for sprint2, setting up a new window and testing out some features of bufferimage},
+  {ubit: <xiaofeli>, progress: Will design the content of the main menu, set up more features for sprint2},
+  {ubit: <jiaqilin>, progress: Will create some key action class for some button changes}},
+   ]
+issues: [ #
+  {ubit: <xiaofeili, rundali> menu},
+  {ubit: <jialuota, jiaqilin> typing}
+  {unit: <jialuota, jiaqilin, xiaofeili, rundali> animation}
+  ]
+Notes:  | # Anything covered in the meeting that doesn't fit elsewhere.
+  The group is considering a switch from Django to Ruby on Rails. Deliberations will continue.
+  TA suggested moving sensitive computation from the browser/client to the server for improved security.
