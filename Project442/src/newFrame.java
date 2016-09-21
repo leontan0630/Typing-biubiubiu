@@ -16,7 +16,6 @@ public class newFrame {
 	private static String gameOutput;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
-	
 	/**
 	 * Launch the application.
 	 */
@@ -70,9 +69,11 @@ public class newFrame {
 		btnCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				userInput = textField_1.getText();
+			
 				if(gameOutput.equals(userInput)){
 					lblNewLabel_1.setText("SUCCESS!!!!");
 					//textField_2.setText("pass");
+				
 					}else{
 						lblNewLabel_1.setText("FAIL!!!!!");
 						//System.out.println();
