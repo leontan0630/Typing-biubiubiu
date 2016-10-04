@@ -1,18 +1,24 @@
 import java.awt.EventQueue;
+
+
 import javax.swing.JFrame;
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+
 import java.awt.Font;
-import java.awt.Window;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 //import newFrame.java;
 public class Frame extends newFrame {
 
 	private JFrame frame;
-	private JFrame newFrame=null;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -46,52 +52,74 @@ public class Frame extends newFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnStart = new JButton("START");
-		btnStart.addActionListener(new ActionListener() {
+		AbstractAction sbp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				newFrame window = new newFrame();
-				window.newWindow();
+				settingFrame n =  new settingFrame();
+				n.newWindow();
+				
 			}
-		});
+		};
+		JButton btnStart = new JButton("START (S)");
+		btnStart.addActionListener(sbp);
+		btnStart.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, 0), "onS");
+		btnStart.getActionMap().put("onS", sbp);
 		btnStart.setForeground(Color.WHITE);
 		btnStart.setBackground(Color.DARK_GRAY);
-		btnStart.setBounds(167, 84, 97, 25);
+		btnStart.setBounds(262, 84, 126, 25);
 		frame.getContentPane().add(btnStart);
 		
-		JButton btnSetting = new JButton("SETTING");
-		btnSetting.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {	//function for setting
+		AbstractAction qbp = new AbstractAction(){
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
 			}
-		});
-		btnSetting.setForeground(Color.WHITE);
-		btnSetting.setBackground(Color.DARK_GRAY);
-		btnSetting.setBounds(167, 122, 97, 25);
-		frame.getContentPane().add(btnSetting);
-		
-		JButton btnGuid = new JButton("GUIDE");
-		btnGuid.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { //function for guide
-			}
-		});
-		btnGuid.setForeground(Color.WHITE);
-		btnGuid.setBackground(Color.DARK_GRAY);
-		btnGuid.setBounds(167, 160, 97, 25);
-		frame.getContentPane().add(btnGuid);
-		
-		JButton btnQuite = new JButton("QUIT");
-		btnQuite.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {   //function for quit
-			}
-		});
+		};
+		JButton btnQuite = new JButton("QUIT (Q)");
+		btnQuite.addActionListener(qbp);
+		btnQuite.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0), "onQ");
+		btnQuite.getActionMap().put("onQ", qbp);
 		btnQuite.setForeground(Color.WHITE);
 		btnQuite.setBackground(Color.DARK_GRAY);
-		btnQuite.setBounds(167, 198, 97, 25);
+		btnQuite.setBounds(262, 156, 126, 25);
 		frame.getContentPane().add(btnQuite);
 		
+		//AbstractAction dbp = new AbstractAction(){
+			//public void actionPerformed(ActionEvent e) {
+				//settingFrame n =  new settingFrame();
+				//n.newWindow();
+			//}
+		//};
+		/*JButton btnSetting = new JButton("DIFFICULTY (D)");
+		btnSetting.addActionListener(dbp);
+		btnQuite.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_D, 0), "onD");
+		btnQuite.getActionMap().put("onD", dbp);
+		btnSetting.setForeground(Color.WHITE);
+		btnSetting.setBackground(Color.DARK_GRAY);
+		btnSetting.setBounds(262, 122, 126, 25);
+		frame.getContentPane().add(btnSetting);
+		*/
+		JLabel lblSomeTips = new JLabel();
+		lblSomeTips.setBounds(39, 83, 162, 128);
+		frame.getContentPane().add(lblSomeTips);
+		
+		AbstractAction gbp = new AbstractAction(){
+			public void actionPerformed(ActionEvent e) {
+				lblSomeTips.setText("Some tips !!!");
+			}
+		};
+		JButton btnGuid = new JButton("GUIDE (G)");
+		btnGuid.addActionListener(gbp);
+		btnQuite.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_G, 0), "onG");
+		btnQuite.getActionMap().put("onG", gbp);
+		btnGuid.setForeground(Color.WHITE);
+		btnGuid.setBackground(Color.DARK_GRAY);
+		btnGuid.setBounds(262, 120, 126, 25);
+		frame.getContentPane().add(btnGuid);
+		
 		JLabel lblTypingBiubiubiu = new JLabel("Typing - biubiubiu");
-		lblTypingBiubiubiu.setFont(new Font("Viner Hand ITC", Font.BOLD, 18));
-		lblTypingBiubiubiu.setBounds(128, 27, 198, 44);
+		lblTypingBiubiubiu.setFont(new Font("Viner Hand ITC", Font.BOLD, 20));
+		lblTypingBiubiubiu.setBounds(122, 30, 198, 44);
 		frame.getContentPane().add(lblTypingBiubiubiu);
+		
+		
 	}
 }
