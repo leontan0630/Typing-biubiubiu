@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 public class Frame extends newFrame {
 
 	private JFrame frame;
-	
+	dddd
 	/**
 	 * Launch the application.
 	 */
