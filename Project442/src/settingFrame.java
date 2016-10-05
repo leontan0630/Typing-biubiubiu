@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 
-public class settingFrame {
+public class settingFrame extends booksFrame {
 
 	private JFrame frame;
 
@@ -53,6 +53,8 @@ public class settingFrame {
 		AbstractAction ebp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
+				booksFrame n = new booksFrame();
+				n.newBooks();
 			}
 		};
 		JButton btnEasy = new JButton("EASY (E)");
@@ -67,6 +69,8 @@ public class settingFrame {
 		AbstractAction mbp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
+				newFrame n = new newFrame();
+				n.newWindow();
 			}
 		};
 		JButton btnMedium = new JButton("MEDIUM (M)");
