@@ -2,17 +2,22 @@ import java.awt.EventQueue;
 
 
 import javax.swing.JFrame;
+import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 
 import java.awt.Font;
+import java.awt.Label;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 //import newFrame.java;
 public class Frame extends newFrame {
@@ -51,6 +56,12 @@ public class Frame extends newFrame {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		try {
+			frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg")))));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		AbstractAction sbp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
