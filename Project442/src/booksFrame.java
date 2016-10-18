@@ -104,9 +104,10 @@ public class booksFrame {
 		
 		AbstractAction mbp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
+				
 				frame.dispose();
-				newFrame n = new newFrame();
-				n.newWindow();
+				chapterSelection n = new chapterSelection();
+				n.newChapter();
 			}
 		};
 		JButton btnConfirm = new JButton("Confirm");
