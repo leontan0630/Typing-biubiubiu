@@ -69,6 +69,7 @@ public class MyJFrame extends JFrame {
 		
 		
 		
+		
 		JButton btnCheck = new JButton("New button");
 		btnCheck.setBounds(666, 544, 107, 40);
 		getContentPane().add(btnCheck);
@@ -149,6 +150,8 @@ public class MyJFrame extends JFrame {
 								canvas.enemy.setWidth(100);
 								canvas.enemy.setHeight(220);
 								canvas.enemy.setX(600);
+								canvas.bullet.setX(0);
+								canvas.bullet.setxVelo(0);
 								System.out.println("chicken "+canvas.enemy.getX());
 								canvas.hero.setCorrect(false);
 							}
@@ -158,11 +161,12 @@ public class MyJFrame extends JFrame {
 							delay = 0;
 						}
 					if(canvas.hero.getX() == canvas.enemy.getX()){
-
 						JLabel lblNewLabel = new JLabel();
-						lblNewLabel.setBounds(645, 478, 144, 46);
+						lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 32));
+						lblNewLabel.setBounds(645, 485, 166, 46);
 						getContentPane().add(lblNewLabel);
-						lblNewLabel.setText("lose");
+						lblNewLabel.setText("YOU LOSE");
+					
 					}
 					
 					System.out.println("bullet "+canvas.bullet.getHeight());
