@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 //import newFrame.java;
+
 public class Frame extends newFrame {
 
 	private JFrame frame;

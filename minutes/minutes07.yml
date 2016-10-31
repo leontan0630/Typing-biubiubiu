@@ -1,5 +1,5 @@
-date: October 12, 2016
-meeting_type: ta # meeting_type can "group", "ta", or "instructor"
+date: October 19, 2016
+meeting_type: ta 
 attendance: [jialuota, jiaqinlin, rundali, xiaofeili]
 absent: [N\A, N\A, N\A]
 excused_absences: [ # Any legitamite excuses for absent team members
@@ -7,10 +7,10 @@ excused_absences: [ # Any legitamite excuses for absent team members
   {ubit: <ubit6>, reason: Abducted by aliens 15 minutes before meeting}
   ]
 task_progress: [ # All group members must be included here even if they haven't made any progress since the last meeting
-  {ubit: <jialuota>, progress: Sepearate tasks to each member in the group for sprint3, more books, seperate them to paragraphs and grap sentence on each book},
-  {ubit: <jiaqilin>, progress: animation for sprint3, building enemy and shooting animation},
-  {ubit: <rundali>, progress: aniamtion for sprint3, building health bar and collision},
-  {ubit: <xiaofeiliu>, progress: continue elborate the menu, resize each frame, start doing leader board},
+  {ubit: <jialuota>, progress: Showing TA about my progress of reading chapter by chapter},
+  {ubit: <jiaqilin>, progress: Question about the animation and how to solve the bufferimage problem},
+  {ubit: <xiaofeili>, progress: Solving the problem of adjusting the layout of the frame},
+  {ubit: <rundali>, progress: still developing the animation},
   {ubit: <ubit4>, progress: N/A},
   {ubit: <ubit5>, progress: N/A},
   {ubit: <ubit6>, progress: N/A}

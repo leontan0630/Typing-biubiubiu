@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.Panel;
 
@@ -121,19 +122,72 @@ public class newFrame {
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		try{
-			String fileName="Japanese Fairy Tale.txt";
-			FileReader inputFile = new FileReader(fileName);
+			String chapterList="the-chapter.txt";
+			FileReader inputFile = new FileReader(chapterList);
 			BufferedReader bufferReader = new BufferedReader(inputFile);
-			para=new ArrayList<>();
-			String line;
-			while(para.size()!=100){
-				line=bufferReader.readLine();
-				if(!line.isEmpty()){
-					para.add(line);
+			String chapter=bufferReader.readLine();
+			if(chapter.equals("THE ADVENTURES OF KINTARO, THE GOLDEN BOY")){
+				try{
+					String fileName="JAPANESE FAIRY TALE//THE ADVENTURES OF KINTARO, THE GOLDEN BOY..txt";
+					FileReader input = new FileReader(fileName);
+					Scanner scanner = new Scanner(input);
+					para=new ArrayList<>();
+					String line;
+					while(scanner.hasNext()){
+						line=scanner.nextLine();
+						if(!line.isEmpty()){
+							para.add(line);
+						}
+					}
+					//scanner.close();
+				}catch(Exception e){
+					System.out.println("Error while reading file");
+				}
+				
+			}
+			else if(chapter.equals("THE BAMBOO-CUTTER AND THE MOON-CHILD")){
+				
+				try{
+					String fileName="JAPANESE FAIRY TALE//THE BAMBOO-CUTTER AND THE MOON-CHILD..txt";
+					//System.out.println(fileName);
+					FileReader input = new FileReader(fileName);
+					//System.out.println("YEAHHHHHH");
+					Scanner scanner = new Scanner(input);
+					para=new ArrayList<>();
+					String line;
+					while(scanner.hasNext()){
+						line=scanner.nextLine();
+						if(!line.isEmpty()){
+							para.add(line);
+						}
+					}
+					//scanner.close();
+				}catch(Exception e){
+					//System.out.println("NOOOOOOOOOOOOO");
 				}
 			}
+			else if(chapter.equals("THE STORY OF URASHIMA TARO, THE FISHER LAD")){
+				try{
+					String fileName="JAPANESE FAIRY TALE//THE STORY OF URASHIMA TARO, THE FISHER LAD.txt";
+					FileReader input = new FileReader(fileName);
+					Scanner scanner = new Scanner(input);
+					para=new ArrayList<>();
+					String line;
+					while(scanner.hasNext()){
+						line=scanner.nextLine();
+						if(!line.isEmpty()){
+							para.add(line);
+						}
+					}
+					//scanner.close();
+				}catch(Exception e){
+					System.out.println("Error while reading file");
+				}
+			}
+			//bufferReader.close();
 		}
 		catch(Exception e){
+			//System.out.println("here");
 			System.out.println("Error while reading file line by line");
 		}
 		//System.out.println("userInput "+userInput);

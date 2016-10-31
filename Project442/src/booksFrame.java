@@ -21,7 +21,11 @@ import javax.swing.KeyStroke;
 public class booksFrame {
 
 	private JFrame frame;
-
+	//private JLabel lblNewLabel;
+	private int c=0;
+	//private JPanel panel;
+	private ImageIcon image=new ImageIcon("japanese-fairy-tales-2.gif");
+	private ImageIcon nImage=new ImageIcon("22917.jpg");
 	/**
 	 * Launch the application.
 	 */
@@ -55,69 +59,62 @@ public class booksFrame {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(107, 0, 212, 272);
+		panel.setBounds(10, 0, 212, 272);
 		
-		
-		
-		ImageIcon image = new ImageIcon("japanese-fairy-tales-2.gif");
 		JLabel lblNewLabel = new JLabel(image);
 		panel.setLayout(new FlowLayout());
 		panel.add(lblNewLabel);
-		
 		frame.getContentPane().add(panel);
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 117, 83, 42);
-		
 		AbstractAction lbp = new AbstractAction(){
-			public void actionPerformed(ActionEvent e) {
-				panel.add(lblNewLabel);
+			public void actionPerformed(ActionEvent e) {		
+				
 			}
 		};
-		JButton btnNewButton = new JButton("<");
-		btnNewButton.addActionListener(lbp);
-		btnNewButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0), "onLEFT");
-		btnNewButton.getActionMap().put("onLEFT", lbp);
-		panel_1.setLayout(new FlowLayout());
-		panel_1.add(btnNewButton);
-		
-		frame.getContentPane().add(panel_1);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(331, 117, 89, 42);
 		
 		AbstractAction rbp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
+				
 				//different book to choose
+				
 			}
 		};
-		JButton button = new JButton(">");
-		button.addActionListener(rbp);
-		button.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0), "onRIGHT");
-		button.getActionMap().put("onRIGHT", rbp);
-		panel_2.setLayout(new FlowLayout());
-		panel_2.add(button);
-		
-		frame.getContentPane().add(panel_2);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(146, 274, 128, 37);
+		panel_3.setBounds(53, 272, 128, 37);
 		
 		AbstractAction mbp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				newFrame n = new newFrame();
-				n.newWindow();
+				chapterSelection n = new chapterSelection();
+				n.newChapter();
 			}
 		};
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(mbp);
 		btnConfirm.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "onENTER");
 		btnConfirm.getActionMap().put("onENTER", mbp);
-		panel_3.setLayout(new FlowLayout());
+		//spanel_3.setLayout(new FlowLayout());
 		panel_3.add(btnConfirm);
 		frame.getContentPane().add(panel_3);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(232, 0, 192, 272);
+		frame.getContentPane().add(panel_1);
+		
+		JLabel lblNewLabel_1 = new JLabel(nImage);
+		panel_1.add(lblNewLabel_1);
+		frame.getContentPane().add(panel_1);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(270, 272, 128, 37);
+		frame.getContentPane().add(panel_2);
+		
+		JButton btnConfirm_1 = new JButton("Confirm");
+		panel_2.add(btnConfirm_1);
 		//ImageIcon image = new ImageIcon("japanese-fairy-tales-2.gif");
 		//frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg")))));
+		//ImageIcon image=new ImageIcon();
+		
 		
 	}
 }
