@@ -1,124 +1,141 @@
-import java.awt.EventQueue;
-import java.awt.FlowLayout;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.AbstractAction;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-
+import java.awt.*;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
-public class booksFrame {
-
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void newBooks() {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					booksFrame window = new booksFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
-	public booksFrame() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 370);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(107, 0, 212, 272);
-		
-		
-		
-		ImageIcon image = new ImageIcon("japanese-fairy-tales-2.gif");
-		JLabel lblNewLabel = new JLabel(image);
-		panel.setLayout(new FlowLayout());
-		panel.add(lblNewLabel);
-		
-		frame.getContentPane().add(panel);
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 117, 83, 42);
-		
-		AbstractAction lbp = new AbstractAction(){
-			public void actionPerformed(ActionEvent e) {
-				panel.add(lblNewLabel);
-			}
-		};
-		JButton btnNewButton = new JButton("<");
-		btnNewButton.addActionListener(lbp);
-		btnNewButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0), "onLEFT");
-		btnNewButton.getActionMap().put("onLEFT", lbp);
-		panel_1.setLayout(new FlowLayout());
-		panel_1.add(btnNewButton);
-		
-		frame.getContentPane().add(panel_1);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(331, 117, 89, 42);
-		
-		AbstractAction rbp = new AbstractAction(){
-			public void actionPerformed(ActionEvent e) {
-				//different book to choose
-			}
-		};
-		JButton button = new JButton(">");
-		button.addActionListener(rbp);
-		button.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0), "onRIGHT");
-		button.getActionMap().put("onRIGHT", rbp);
-		panel_2.setLayout(new FlowLayout());
-		panel_2.add(button);
-		
-		frame.getContentPane().add(panel_2);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(146, 274, 128, 37);
-		
-		AbstractAction mbp = new AbstractAction(){
+public class booksFrame extends JFrame {
+	private JLabel lblNewLabel;
+	private ImageIcon image;
+    private static final long serialVersionUID = 1L;
+   // private JFrame frame;
+    public booksFrame() {
+        Box box = new Box(BoxLayout.Y_AXIS);
+        box.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+        box.add(Box.createVerticalGlue());
+        booksFrames leaderBoards_ = new booksFrames();
+        box.add(leaderBoards_);
+        leaderBoards_.setLayout(null);
+        
+        
+       
+        
+        
+        
+        
+        
+        image = new ImageIcon("japanese-fairy-tales-2.gif");
+        lblNewLabel = new JLabel(image);
+        lblNewLabel.setBounds(105, 34, 189, 244);
+	//	JLabel lblNewLabel = new JLabel(image);
+        leaderBoards_.add(lblNewLabel);
+        
+        
+        AbstractAction mbp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e) {
 				
-				frame.dispose();
+				dispose();
 				chapterSelection n = new chapterSelection();
 				n.newChapter();
 			}
 		};
-		JButton btnConfirm = new JButton("Confirm");
-		btnConfirm.addActionListener(mbp);
-		btnConfirm.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "onENTER");
+        JButton btnConfirm = new JButton("CONFIRM");
+        btnConfirm.addActionListener(mbp);
+        btnConfirm.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "onENTER");
 		btnConfirm.getActionMap().put("onENTER", mbp);
-		panel_3.setLayout(new FlowLayout());
-		panel_3.add(btnConfirm);
-		frame.getContentPane().add(panel_3);
-		//ImageIcon image = new ImageIcon("japanese-fairy-tales-2.gif");
-		//frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg")))));
-		
-	}
+        btnConfirm.setBounds(143, 326, 97, 25);
+        leaderBoards_.add(btnConfirm);
+        
+        
+        AbstractAction lbp = new AbstractAction(){
+			public void actionPerformed(ActionEvent e) {
+			 image = new ImageIcon("pg13213.cover.medium.jpg");
+		      
+			 lblNewLabel = new JLabel(image);
+			 lblNewLabel.setBounds(105, 34, 189, 244);
+			 leaderBoards_.add(lblNewLabel);
+			
+			}
+		};
+        JButton button = new JButton("<<");
+        button.addActionListener(lbp);
+        button.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0), "onLEFT");
+		button.getActionMap().put("onLEFT", lbp);
+        button.setBounds(34, 326, 97, 25);
+        leaderBoards_.add(button);
+        
+        JButton btnNewButton = new JButton(">>");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	}
+        });
+        btnNewButton.setBounds(252, 326, 97, 25);
+        leaderBoards_.add(btnNewButton);
+        
+        
+        
+       
+        box.add(Box.createVerticalGlue());
+        getContentPane().add(box);
+        pack();
+        setTitle("BOOKS");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setMaximumSize(getMinimumSize());
+        setMinimumSize(getMinimumSize());
+        setPreferredSize(getPreferredSize());
+        setLocation(150, 150);
+        setVisible(true);
+    }
+
+    public static void booksFrame() {
+        Runnable r = new Runnable() {
+
+            @Override
+            public void run() {
+            	booksFrame main = new booksFrame();
+            }
+        };
+        javax.swing.SwingUtilities.invokeLater(r);
+    }
+}
+
+class booksFrames extends JPanel {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public Dimension getMinimumSize() {
+        return new Dimension(400, 400);
+    }
+
+    @Override
+    public Dimension getMaximumSize() {
+        return new Dimension(400, 400);
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(400, 400);
+    }
+
+   /* @Override
+    public void paintComponent(Graphics g) {
+        int margin = 10;
+        Dimension dim = getSize();
+        super.paintComponent(g);
+        g.setColor(Color.red);
+        g.fillRect(margin, margin, dim.width - margin * 2, dim.height - margin * 2);
+    }*/
+    
+    public booksFrames(){
+    	super();
+    	int margin = 0;
+    	//this.setBackground(Color.BLUE);
+    	Dimension dim = getSize();
+    	
+    	this.setBounds(margin, margin, dim.width - margin * 2, dim.height - margin * 2);
+	
+    	
+    	
+}
 }
