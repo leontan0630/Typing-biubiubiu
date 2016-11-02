@@ -1,0 +1,22 @@
+date: September 22, 2016
+meeting_type: instructor
+attendance: [jialuota, jiaqinlin, rundali, xiaofeili]
+absent: [N\A, N\A, N\A]
+excused_absences: N/A
+  ]
+task_progress: [ # All group members must be included here even if they haven't made any progress since the last meeting
+  {ubit: <jialuota>, progress: Understand more about community point},
+  {ubit: <jiaqinlin>, progress: Maybe consider online feature},
+  {ubit: <xiaofeili>, progress: Notice that we have to sepereate missions if we are sharing tasks},
+  {ubit: <rundali>, progress: Maybe conside more new features for our project},
+  {ubit: <ubit4>, progress: N/A},
+  {ubit: <ubit5>, progress: N/A},
+  {ubit: <ubit6>, progress: N/A}
+  ]
+issues: [ # N/A
+  {ubit: <ubit2>, N/A},
+  {ubit: <ubit6>, N/A}
+  ]
+Notes:  | # Anything covered in the meeting that doesn't fit elsewhere.
+  The group is considering a switch from Django to Ruby on Rails. Deliberations will continue.
+  TA suggested moving sensitive computation from the browser/client to the server for improved security.

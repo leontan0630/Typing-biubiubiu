@@ -1,0 +1,24 @@
+date: October 12, 2016
+meeting_type: ta # meeting_type can "group", "ta", or "instructor"
+attendance: [jialuota, jiaqinlin, rundali, xiaofeili]
+absent: [N\A, N\A, N\A]
+excused_absences: [ # Any legitamite excuses for absent team members
+  {ubit: <ubit5>, : reason: Had class. This was known through a Doodle poll before scheduling the meeting.},
+  {ubit: <ubit6>, reason: Abducted by aliens 15 minutes before meeting}
+  ]
+task_progress: [ # All group members must be included here even if they haven't made any progress since the last meeting
+  {ubit: <jialuota>, progress: Sepearate tasks to each member in the group for sprint3, more books, seperate them to paragraphs and grap sentence on each book},
+  {ubit: <jiaqilin>, progress: animation for sprint3, building enemy and shooting animation},
+  {ubit: <rundali>, progress: aniamtion for sprint3, building health bar and collision},
+  {ubit: <xiaofeiliu>, progress: continue elborate the menu, resize each frame, start doing leader board},
+  {ubit: <ubit4>, progress: N/A},
+  {ubit: <ubit5>, progress: N/A},
+  {ubit: <ubit6>, progress: N/A}
+  ]
+issues: [ # N/A
+  {ubit: <ubit2>, N/A},
+  {ubit: <ubit6>, N/A}
+  ]
+Notes:  | # Anything covered in the meeting that doesn't fit elsewhere.
+  The group is considering a switch from Django to Ruby on Rails. Deliberations will continue.
+  TA suggested moving sensitive computation from the browser/client to the server for improved security.
