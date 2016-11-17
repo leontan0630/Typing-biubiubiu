@@ -205,7 +205,7 @@ public class leaderBoard extends JFrame {
 
             @Override
             public void run() {
-            	leaderBoard main = new leaderBoard();
+            	//leaderBoard main = new leaderBoard();
             }
         };
         javax.swing.SwingUtilities.invokeLater(r);

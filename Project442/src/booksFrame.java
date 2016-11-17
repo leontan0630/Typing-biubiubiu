@@ -1,7 +1,11 @@
 import java.awt.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class booksFrame extends JFrame {
@@ -10,6 +14,8 @@ public class booksFrame extends JFrame {
     private static final long serialVersionUID = 1L;
    // private JFrame frame;
     public booksFrame() {
+    	
+    	
         Box box = new Box(BoxLayout.Y_AXIS);
         box.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         box.add(Box.createVerticalGlue());
@@ -18,7 +24,7 @@ public class booksFrame extends JFrame {
         leaderBoards_.setLayout(null);
         
         
-       
+        
         
         
         
@@ -92,7 +98,8 @@ public class booksFrame extends JFrame {
 
             @Override
             public void run() {
-            	booksFrame main = new booksFrame();
+            	//booksFrame main = new booksFrame();
+            	//main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
         };
         javax.swing.SwingUtilities.invokeLater(r);
@@ -100,6 +107,7 @@ public class booksFrame extends JFrame {
 }
 
 class booksFrames extends JPanel {
+	
 
     private static final long serialVersionUID = 1L;
 

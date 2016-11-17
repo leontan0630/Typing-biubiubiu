@@ -22,7 +22,7 @@ import javax.swing.UIManager;
 public class settingFrame{
 	private JFrame frame;
     public static void newWindow() {
-        new settingFrame();
+        //new settingFrame();
     }
 
     public settingFrame() {
