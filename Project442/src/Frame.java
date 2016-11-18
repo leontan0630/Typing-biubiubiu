@@ -116,7 +116,8 @@ public class Frame {
    		
     		AbstractAction gbp = new AbstractAction(){
     			public void actionPerformed(ActionEvent e) {
-   				//lblSomeTips.setText("Some tips !!!");
+   				guidFrame g = new guidFrame();
+   				g.newGuid();
    			}
     		};
     		JButton btnGuid = new JButton("GUIDE (G)");
