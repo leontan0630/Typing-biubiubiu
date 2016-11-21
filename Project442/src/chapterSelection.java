@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -26,7 +27,7 @@ import javax.swing.UIManager;
 public class chapterSelection {
 	private JFrame frame;
     public static void newChapter()  {
-        new chapterSelection();
+        //new chapterSelection();
     }
 
     public chapterSelection() {
@@ -53,7 +54,7 @@ public class chapterSelection {
 
         public menuPane() {
             try {
-                setIcon(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg"))));
+            	setIcon(new ImageIcon(ImageIO.read(ResourceLoader.load("bright-colored-backgrounds-1455249.jpg"))));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -73,24 +74,25 @@ public class chapterSelection {
     		
     		gbc.insets = new Insets(2, 2, 10, 2);
 		            
-    		JButton btnNewButton = new JButton("THE ADVENTURES OF KINTARO, THE GOLDEN BOY");
+    		JButton btnNewButton = new JButton("The Orange Girl");
     		
     		btnNewButton.addActionListener(new ActionListener() {
     			public void actionPerformed(ActionEvent e) {
     				try {
     					PrintWriter writer = new PrintWriter("the-chapter.txt","UTF-8");
-    					writer.println("THE ADVENTURES OF KINTARO, THE GOLDEN BOY");
+    					//PrintWriter writer = new PrintWriter(new FileWriter(this.getClass().getResource("the-chapter.txt").getPath()));
+    					writer.println("The Orange Girl");
     					writer.close();
     				} catch (FileNotFoundException e1) {
     					// TODO Auto-generated catch block
     					e1.printStackTrace();
-    				} catch (UnsupportedEncodingException e1) {
+    				} catch (Exception e1) {
     					// TODO Auto-generated catch block
     					e1.printStackTrace();
     				} 
     				frame.dispose();
-    				newFrame n = new newFrame();
-    				n.newWindow();
+    				MyJFrame n = new MyJFrame();
+    				n.main(null);
     			}
     		});
     		
@@ -99,24 +101,25 @@ public class chapterSelection {
     		gbc.gridy = 1;
     		add(btnNewButton,gbc);
    		
-    		JButton btnNewButton_1 = new JButton("   THE BAMBOO-CUTTER AND THE MOON-CHILD    ");
+    		JButton btnNewButton_1 = new JButton("The Tower of London");
     		
     		btnNewButton_1.addActionListener(new ActionListener() {
     			public void actionPerformed(ActionEvent e) {
     				try {
     					PrintWriter writer = new PrintWriter("the-chapter.txt","UTF-8");
-    					writer.println("THE BAMBOO-CUTTER AND THE MOON-CHILD");
+    					//PrintWriter writer = new PrintWriter(new FileWriter(this.getClass().getResource("the-chapter.txt").getPath()));
+    					writer.println("The Tower of London");
     					writer.close();
     				} catch (FileNotFoundException e1) {
     					// TODO Auto-generated catch block
     					e1.printStackTrace();
-    				} catch (UnsupportedEncodingException e1) {
+    				} catch (Exception e1) {
     					// TODO Auto-generated catch block
     					e1.printStackTrace();
     				} 
     				frame.dispose();
-    				newFrame n = new newFrame();
-    				n.newWindow();
+    				MyJFrame n = new MyJFrame();
+    				n.main(null);
     			}
     		});
     		gbc.gridx = 0;
@@ -126,12 +129,13 @@ public class chapterSelection {
     		//add(btnNewButton_1);
     		
     		
-    		JButton btnNewButton_2 = new JButton("THE STORY OF URASHIMA TARO, THE FISHER LAD");
+    		JButton btnNewButton_2 = new JButton("The Tower");
     		btnNewButton_2.addActionListener(new ActionListener() {
     			public void actionPerformed(ActionEvent e) {
     				try {
     					PrintWriter writer = new PrintWriter("the-chapter.txt","UTF-8");
-    					writer.println("THE STORY OF URASHIMA TARO, THE FISHER LAD");
+    					
+    					writer.println("The Tower");
     					writer.close();
     				} catch (FileNotFoundException e1) {
     					// TODO Auto-generated catch block
@@ -141,8 +145,8 @@ public class chapterSelection {
     					e1.printStackTrace();
     				} 
     				frame.dispose();
-    				newFrame n = new newFrame();
-    				n.newWindow();
+    				MyJFrame n = new MyJFrame();
+    				n.main(null);
     			}
     		});
     		

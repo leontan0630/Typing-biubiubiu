@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.Shape;
@@ -14,12 +15,13 @@ import java.awt.geom.Rectangle2D;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
-import com.sun.glass.events.KeyEvent;
 
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
@@ -33,7 +35,7 @@ public class MyJFrame extends JFrame {
 	private Drawing drawing;
 	private int bulletFly;
 	private JLabel loose;
-	
+	private String mix;
 	private JTextField textField_1;
 	private ArrayList<String>para;
 	int check = 0;
@@ -78,17 +80,71 @@ public class MyJFrame extends JFrame {
 		lblYouLoose.setBounds(32, 478, 85, 31);
 		loose = lblYouLose;
 		try{
-			String fileName="Japanese Fairy Tale.txt";
-			FileReader inputFile = new FileReader(fileName);
+			String chapterList="the-chapter.txt";
+			FileReader inputFile = new FileReader(chapterList);
 			BufferedReader bufferReader = new BufferedReader(inputFile);
-			para=new ArrayList<>();
-			String line;
-			while(para.size()!=100){
-				line=bufferReader.readLine();
-				if(!line.isEmpty()){
-					para.add(line);
+			String chapter=bufferReader.readLine();
+			if(chapter.equals("THE ADVENTURES OF KINTARO, THE GOLDEN BOY")){
+				try{
+					String fileName="JAPANESE FAIRY TALE//THE ADVENTURES OF KINTARO, THE GOLDEN BOY..txt";
+					FileReader input = new FileReader(fileName);
+					Scanner scanner = new Scanner(input);
+					para=new ArrayList<>();
+					String line;
+					while(scanner.hasNext()){
+						line=scanner.nextLine();
+						if(!line.isEmpty()){
+							para.add(line);
+							mix=mix+line;
+						}
+					}
+					//scanner.close();
+				}catch(Exception e){
+					System.out.println("Error while reading file");
 				}
 			}
+			else if(chapter.equals("THE BAMBOO-CUTTER AND THE MOON-CHILD")){
+				
+				try{
+					String fileName="JAPANESE FAIRY TALE//THE BAMBOO-CUTTER AND THE MOON-CHILD..txt";
+					//System.out.println(fileName);
+					FileReader input = new FileReader(fileName);
+					//System.out.println("YEAHHHHHH");
+					Scanner scanner = new Scanner(input);
+					para=new ArrayList<>();
+					String line;
+					while(scanner.hasNext()){
+						line=scanner.nextLine();
+						if(!line.isEmpty()){
+							para.add(line);
+							mix=mix+line;
+						}
+					}
+					//scanner.close();
+				}catch(Exception e){
+					//System.out.println("NOOOOOOOOOOOOO");
+				}
+			}
+			else if(chapter.equals("THE STORY OF URASHIMA TARO, THE FISHER LAD")){
+				try{
+					String fileName="JAPANESE FAIRY TALE//THE STORY OF URASHIMA TARO, THE FISHER LAD.txt";
+					FileReader input = new FileReader(fileName);
+					Scanner scanner = new Scanner(input);
+					para=new ArrayList<>();
+					String line;
+					while(scanner.hasNext()){
+						line=scanner.nextLine();
+						if(!line.isEmpty()){
+							para.add(line);
+							mix=mix+line;
+						}
+					}
+					//scanner.close();
+				}catch(Exception e){
+					System.out.println("Error while reading file");
+				}
+			}
+			
 		}
 		catch(Exception e){
 			System.out.println("Error while reading file line by line");
@@ -96,14 +152,15 @@ public class MyJFrame extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel();
 		lblNewLabel_1.setBounds(10, 478, 623, 54);
 		getContentPane().add(lblNewLabel_1);
+		//String trytrytry="hello";
+		StringTokenizer multiTokenizer;
 		lblNewLabel_1.setText(para.get(0));
-		
 		para.remove(0);
 		//getContentPane().add(lblYouLoose);
 	//	 Shape rectangle = new Rectangle2D.Float(x, 300, 5, 5);
 		AbstractAction ebp = new AbstractAction(){
 			public void actionPerformed(ActionEvent e){
-				if(!para.isEmpty()){
+				if(!mix.isEmpty()){
 					String temp=textField_1.getText();
 					if(temp.equals(lblNewLabel_1.getText())){
 						canvas.hero.setCorrect(true);
@@ -119,7 +176,9 @@ public class MyJFrame extends JFrame {
 		
 		btnCheck.addActionListener(ebp); 
 		btnCheck.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"onENTER");
+		//btnCheck.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"onENTER");
 		btnCheck.getActionMap().put("onENTER", ebp);
+		//btnCheck.setBounds(327,209,107,52);
 	}
 	public Canvas getCanvas(){
 		return this.canvas;
@@ -145,14 +204,14 @@ public class MyJFrame extends JFrame {
 							canvas.enemy.setWidth(0);
 							canvas.enemy.setHeight(0);
 							
-							if(delay!= 5){
+							if(delay!= 10){
 								delay = delay +1;
 								canvas.enemy.setWidth(100);
 								canvas.enemy.setHeight(220);
 								canvas.enemy.setX(600);
 								canvas.bullet.setX(0);
 								canvas.bullet.setxVelo(0);
-								System.out.println("chicken "+canvas.enemy.getX());
+								//System.out.println("chicken "+canvas.enemy.getX());
 								canvas.hero.setCorrect(false);
 							}
 							
@@ -169,7 +228,7 @@ public class MyJFrame extends JFrame {
 					
 					}
 					
-					System.out.println("bullet "+canvas.bullet.getHeight());
+					//System.out.println("bullet "+canvas.bullet.getHeight());
 					sleep(100);
 				} catch (InterruptedException e) {
 				}
