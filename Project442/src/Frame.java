@@ -20,7 +20,7 @@ import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
 public class Frame {
-
+	JFrame frame;
     public static void main(String[] args)  {
         new Frame();
     }
@@ -34,12 +34,11 @@ public class Frame {
                 } catch (Exception ex) {
                 }
 		                
-                JFrame frame = new JFrame("Typing-biubiubiu");
+                frame = new JFrame("Typing-biubiubiu");
                 frame.setBounds(100, 100, 450, 300);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.add(new menuPane());
-		               // frame.pack();
-		                //frame.setLocationRelativeTo(null);
+		        
                 frame.setVisible(true);
             }
         });
@@ -49,7 +48,8 @@ public class Frame {
 
         public menuPane() {
             try {
-                setIcon(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg"))));
+                //setIcon(new ImageIcon(ImageIO.read(new File("things/bright-colored-backgrounds-1455249.jpg"))));
+            	setIcon(new ImageIcon(ImageIO.read(ResourceLoader.load("bright-colored-backgrounds-1455249.jpg"))));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -57,34 +57,13 @@ public class Frame {
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.anchor = GridBagConstraints.CENTER;
             gbc.insets = new Insets(2, 2, 10, 2);
-           /* gbc.gridx = 0;
-            gbc.gridy = 0;
-
-		            JLabel nameLabel = new JLabel("Name: ");
-		            nameLabel.setForeground(Color.WHITE);
-		            JLabel passwordLabel = new JLabel("Password: ");
-		            passwordLabel.setForeground(Color.WHITE);
-
-		            add(nameLabel, gbc);
-		            gbc.gridy++;
-		            add(passwordLabel, gbc);
-
-		            gbc.anchor = GridBagConstraints.WEST;
-		            gbc.gridx++;
-		            gbc.gridy = 0;
-		            add(new JTextField(20), gbc);
-		            gbc.gridy++;
-		            add(new JTextField(20), gbc);
-
-		            gbc.gridy++;
-		            gbc.insets = new Insets(10, 2, 2, 2);
-		            gbc.anchor = GridBagConstraints.EAST;
-		            add(new JButton("Submit"), gbc);      */
+          
 		            
-	           AbstractAction sbp = new AbstractAction(){
+	        AbstractAction sbp = new AbstractAction(){
 	   			public void actionPerformed(ActionEvent e) {
-	   				settingFrame n =  new settingFrame();
-	   				n.newWindow();
+	   				frame.dispose();
+	   				guidFrame n =  new guidFrame();
+	   				n.newGuid();
 		    				
     			}
     		};

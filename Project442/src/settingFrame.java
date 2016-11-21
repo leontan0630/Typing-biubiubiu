@@ -22,7 +22,7 @@ import javax.swing.UIManager;
 public class settingFrame{
 	private JFrame frame;
     public static void newWindow() {
-        new settingFrame();
+        //new settingFrame();
     }
 
     public settingFrame() {
@@ -48,7 +48,8 @@ public class settingFrame{
 
         public menuPane() {
             try {
-                setIcon(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg"))));
+                //setIcon(new ImageIcon(ImageIO.read(new File("things/bright-colored-backgrounds-1455249.jpg"))));
+            	setIcon(new ImageIcon(ImageIO.read(ResourceLoader.load("bright-colored-backgrounds-1455249.jpg"))));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

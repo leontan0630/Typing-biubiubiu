@@ -28,7 +28,7 @@ public class Canvas extends JPanel {
 	public Canvas() {
 		hero = new Hero(0, 300, 0, 0, 100, 100, 600);//character setting
 		background = new Background(0, 0, 0, 0, 800, 550);// background setting
-		enemy = new Enemy(600, 170, -5, 0, 100, 220,hero.getX());
+		enemy = new Enemy(600, 170, -1, 0, 100, 220,hero.getX());
 		bullet = new Bullet(hero.getX(),hero.getY(),0,0,50,10,enemy.getX());
 	}
 	
