@@ -30,7 +30,7 @@ public class Enemy extends MoveObject {
 	}
 	private void action() {
 		if (super.getX() < stopLocation) {
-			super.setxVelo(0);
+			super.setxVelo(-100000);
 		}
 	}
 }

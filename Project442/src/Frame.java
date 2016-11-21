@@ -48,7 +48,8 @@ public class Frame {
 
         public menuPane() {
             try {
-                setIcon(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg"))));
+                //setIcon(new ImageIcon(ImageIO.read(new File("things/bright-colored-backgrounds-1455249.jpg"))));
+            	setIcon(new ImageIcon(ImageIO.read(ResourceLoader.load("bright-colored-backgrounds-1455249.jpg"))));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -61,8 +62,8 @@ public class Frame {
 	        AbstractAction sbp = new AbstractAction(){
 	   			public void actionPerformed(ActionEvent e) {
 	   				frame.dispose();
-	   				settingFrame n =  new settingFrame();
-	   				n.newWindow();
+	   				guidFrame n =  new guidFrame();
+	   				n.newGuid();
 		    				
     			}
     		};
@@ -116,8 +117,7 @@ public class Frame {
    		
     		AbstractAction gbp = new AbstractAction(){
     			public void actionPerformed(ActionEvent e) {
-   				guidFrame g = new guidFrame();
-   				g.newGuid();
+   				//lblSomeTips.setText("Some tips !!!");
    			}
     		};
     		JButton btnGuid = new JButton("GUIDE (G)");

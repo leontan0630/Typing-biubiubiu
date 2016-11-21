@@ -48,7 +48,8 @@ public class guidFrame {
 
         public menuPane() {
             try {
-                setIcon(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg"))));
+                //setIcon(new ImageIcon(ImageIO.read(new File("bright-colored-backgrounds-1455249.jpg"))));
+            	setIcon(new ImageIcon(ImageIO.read(ResourceLoader.load("bright-colored-backgrounds-1455249.jpg"))));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -62,7 +63,7 @@ public class guidFrame {
     		
     		 gbc.insets = new Insets(2, 2, 20, 2);
     		 
-    		JLabel lblTypingBiubiubiu = new JLabel("your instrtuctiion here ");// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~write here
+    		JLabel lblTypingBiubiubiu = new JLabel("First of all thank you for betatesting our game. Since is beta, we only have easy mode for you choose. Hope you enjoy!");// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~write here
     		lblTypingBiubiubiu.setForeground(Color.RED);
     		lblTypingBiubiubiu.setFont(new Font("VTahoma", Font.BOLD, 18));
 	    		//lblTypingBiubiubiu.setSize(198, 44);
@@ -76,10 +77,12 @@ public class guidFrame {
     		 AbstractAction bbp = new AbstractAction(){
      			public void actionPerformed(ActionEvent e) {
      				frame.dispose();
+	   				settingFrame n =  new settingFrame();
+	   				n.newWindow();
      			}
      		};
      		
-    		 JButton btnBack = new JButton("BACK");
+    		 JButton btnBack = new JButton("Next");
      		btnBack.addActionListener(bbp);
      		btnBack.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_B, 0), "onB");
      		btnBack.getActionMap().put("onB", bbp);
