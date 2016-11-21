@@ -6,10 +6,12 @@ public class Main {
 		MyJFrame gameframe = new MyJFrame();
 		gameframe.setVisible(true);
 		
-		
-		HpBar pb = new HpBar("HP Bar");
-        Thread t = new Thread(pb);
+		//
+		//HpBar pb = new HpBar("Hero hp");
+        //Thread t = new Thread(pb);
+        //t.start();
+        MyJFrame a = new MyJFrame("hp");
+        Thread t = new Thread(a);
         t.start();
-        
 	}
 }
