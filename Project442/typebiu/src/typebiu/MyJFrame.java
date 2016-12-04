@@ -93,6 +93,7 @@ public class MyJFrame extends JFrame implements Runnable {
 					}
 					else{
 						//System.out.print("No");
+						//check=false;
 						
 					}
 					sleep(50);
