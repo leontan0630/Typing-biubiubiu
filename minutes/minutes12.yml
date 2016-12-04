@@ -1,4 +1,4 @@
-date: Novermber 16, 2016
+date: Novermber 30, 2016
 meeting_type: ta 
 attendance: [jialuota, jiaqinlin, rundali, xiaofeili]
 absent: [N\A, N\A, N\A]
@@ -7,10 +7,10 @@ excused_absences: [ # Any legitamite excuses for absent team members
   {ubit: <ubit6>, reason: Abducted by aliens 15 minutes before meeting}
   ]
 task_progress: [ # All group members must be included here even if they haven't made any progress since the last meeting
-  {ubit: <jialuota>, progress: Integrate typing with gun firing and respawn of enemy for sprint4},
-  {ubit: <jiaqilin>, progress: Leaderboard integration with game and add your name for sprint 4},
-  {ubit: <xiaofeili>, progress: Finish resizing and centering of content for every game frame for sprint 4},
-  {ubit: <rundali>, progress: Integrate hp bar with enemy attacking player for sprint 4},
+  {ubit: <jialuota>, progress: Getting everything ready for sprint 5, by fixing bugs, setting up the website},
+  {ubit: <jiaqilin>, progress:  Getting everything ready for sprint 5, by fixing bugs, setting up the website},
+  {ubit: <xiaofeili>, progress:  Getting everything ready for sprint 5, by fixing bugs, setting up the website},
+  {ubit: <rundali>, progress:  Getting everything ready for sprint 5, by fixing bugs, setting up the website},
   {ubit: <ubit4>, progress: N/A},
   {ubit: <ubit5>, progress: N/A},
   {ubit: <ubit6>, progress: N/A}
