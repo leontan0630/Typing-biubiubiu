@@ -1,4 +1,5 @@
 
+
 import javax.swing.AbstractAction;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -41,10 +42,10 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 
-public class norJFrame extends JFrame {
+public class MyJFrame extends JFrame {
 	private JLabel lblNewLabel;
 	private Drawing drawing;
-	private norFrames canvas;
+	private myFrames canvas;
 	private int bulletFly;
 	private JLabel loose;
 	private String mix = new String();
@@ -54,13 +55,13 @@ public class norJFrame extends JFrame {
 	int score = 0;
 	private JTextField textField;
 	private PrintWriter outputStream;
-	public norJFrame() {
+	public MyJFrame() {
 		setTitle("HeroDemo");
 		getContentPane().setBackground(Color.ORANGE);
         Box box = new Box(BoxLayout.Y_AXIS);
         box.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         box.add(Box.createVerticalGlue());
-        canvas = new norFrames();
+        canvas = new myFrames();
         box.add(canvas);
         canvas.setLayout(null);
 	
@@ -78,7 +79,7 @@ public class norJFrame extends JFrame {
 			System.out.println("notfound");
 		}
 		textField_1 = new JTextField();
-		textField_1.setBounds(12, 628, 776, 53);
+		textField_1.setBounds(12, 675, 776, 53);
 		canvas.add(textField_1);
 		textField_1.setColumns(10);
 		textField_1.setEditable(false);
@@ -89,7 +90,7 @@ public class norJFrame extends JFrame {
 		
 		
 		JButton btnCheck = new JButton("CHECK");
-        btnCheck.setBounds(691, 696, 97, 25);
+        btnCheck.setBounds(691, 742, 97, 25);
         canvas.add(btnCheck);
 		
 		try{
@@ -253,31 +254,31 @@ public class norJFrame extends JFrame {
 		}
 		
 		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setBounds(22, 599, 761, 16);
+		lblNewLabel_1.setBounds(27, 619, 761, 16);
 		canvas.add(lblNewLabel_1);
 		
 		StringTokenizer multiTokenizer;
 		lblNewLabel_1.setText(para.get(0));
 		
 		JLabel lblYourName = new JLabel("Your Name:");
-		lblYourName.setBounds(12, 694, 89, 25);
+		lblYourName.setBounds(22, 746, 89, 25);
 		canvas.add(lblYourName);
 		
 		textField = new JTextField();
-		textField.setBounds(107, 697, 116, 22);
+		textField.setBounds(110, 749, 116, 22);
 		canvas.add(textField);
 		textField.setColumns(10);
 		
 		JButton btnConfirm = new JButton("Confirm");
-		btnConfirm.setBounds(234, 696, 97, 25);
+		btnConfirm.setBounds(234, 748, 97, 25);
 		canvas.add(btnConfirm);
 		
 		JLabel lblYourScore = new JLabel("Your Score:");
-		lblYourScore.setBounds(400, 694, 80, 25);
+		lblYourScore.setBounds(400, 746, 80, 25);
 		canvas.add(lblYourScore);
 		
 		JLabel lblNewLabel_2 = new JLabel("0");
-		lblNewLabel_2.setBounds(484, 694, 80, 23);
+		lblNewLabel_2.setBounds(478, 747, 80, 23);
 		canvas.add(lblNewLabel_2);
 		para.remove(0);
 		//getContentPane().add(lblYouLoose);
@@ -310,7 +311,7 @@ public class norJFrame extends JFrame {
 				btnCheck.addActionListener(ebp); 
 				btnCheck.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"onENTER");
 				btnCheck.getActionMap().put("onENTER", ebp);
-				canvas.enemy.setxVelo(-5);
+				canvas.enemy.setxVelo(-3);
 				
 				}
 				
@@ -337,7 +338,7 @@ public class norJFrame extends JFrame {
 	        setLocation(150, 150);
 	        setVisible(true);
 	}
-	public norFrames getCanvas(){
+	public myFrames getCanvas(){
 		return this.canvas;
 	}
 	public class Drawing extends Thread {
@@ -379,9 +380,7 @@ public class norJFrame extends JFrame {
 					if(canvas.hero.getX() == canvas.enemy.getX()){
 						outputStream.write(textField.getText()+" "+String.valueOf(score)+"\n");
 						outputStream.close();
-						YesOrNo y = new YesOrNo();
-						dispose();
-						y.choose();
+						lblNewLabel.setText("FAIL");
 						this.stop();
 					}
 					
@@ -399,14 +398,14 @@ public class norJFrame extends JFrame {
 
 	            @Override
 	            public void run() {
-	            	//norJFrame main = new norJFrame();
+	            	//MyJFrame main = new MyJFrame();
 	            	//main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	            }
 	        };
 	        javax.swing.SwingUtilities.invokeLater(r);
 	    }
 }
-class norFrames extends JPanel {
+class myFrames extends JPanel {
 	
 
     private static final long serialVersionUID = 1L;
@@ -438,7 +437,7 @@ class norFrames extends JPanel {
         g.fillRect(margin, margin, dim.width - margin * 2, dim.height - margin * 2);
     }*/
     
-    public norFrames(){
+    public myFrames(){
     	super();
     	int margin = 0;
     	this.setBackground(Color.ORANGE);

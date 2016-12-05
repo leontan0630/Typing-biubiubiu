@@ -185,17 +185,17 @@ class myFrames extends JPanel {
 	public Bullet bullet;
     @Override
     public Dimension getMinimumSize() {
-        return new Dimension(700, 700);
+        return new Dimension(800, 800);
     }
 
     @Override
     public Dimension getMaximumSize() {
-        return new Dimension(700, 700);
+        return new Dimension(800, 800);
     }
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(700, 700);
+        return new Dimension(800, 800);
     }
 
    /* @Override

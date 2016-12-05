@@ -23,13 +23,13 @@ import javax.swing.JLabel;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
-public class YesOrNo {
+public class chapterSelection1 {
 	private JFrame frame;
-    public static void choose()  {
-        //new YesOrNo();
+    public static void newChapter1()  {
+        //new chapterSelection();
     }
 
-    public YesOrNo() {
+    public chapterSelection1() {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -60,12 +60,12 @@ public class YesOrNo {
             setLayout(new GridBagLayout());
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.anchor = GridBagConstraints.CENTER;
-            gbc.insets = new Insets(2, 2, 15, 2);
+            gbc.insets = new Insets(2, 2, 20, 2);
             
-            JLabel lblChapter = new JLabel("What you wanna do next:");
+            JLabel lblChapter = new JLabel("CHAPTER SELECTION:");
     		lblChapter.setFont(new Font("Tahoma", Font.PLAIN, 17));
     		lblChapter.setForeground(Color.ORANGE);
-    		//lblChapter.setBounds(118, 11, 188, 37);
+    		lblChapter.setBounds(118, 11, 188, 37);
     		gbc.gridx = 0;
     		gbc.gridy = 0;
     		add(lblChapter,gbc);
@@ -73,14 +73,24 @@ public class YesOrNo {
     		
     		gbc.insets = new Insets(2, 2, 10, 2);
 		            
-    		JButton btnNewButton = new JButton("Retry");
+    		JButton btnNewButton = new JButton("CHRISTMAS DAY");
     		
     		btnNewButton.addActionListener(new ActionListener() {
     			public void actionPerformed(ActionEvent e) {
-    				
+    				try {
+    					PrintWriter writer = new PrintWriter("the-chapter.txt","UTF-8");
+    					writer.println("CHRISTMAS DAY");
+    					writer.close();
+    				} catch (FileNotFoundException e1) {
+    					// TODO Auto-generated catch block
+    					e1.printStackTrace();
+    				} catch (UnsupportedEncodingException e1) {
+    					// TODO Auto-generated catch block
+    					e1.printStackTrace();
+    				} 
     				frame.dispose();
-    				booksFrame n = new booksFrame();
-    				n.booksFrame();
+    				MyJFrame n = new MyJFrame();
+    				n.main(null);
     			}
     		});
     		
@@ -89,13 +99,24 @@ public class YesOrNo {
     		gbc.gridy = 1;
     		add(btnNewButton,gbc);
    		
-    		JButton btnNewButton_1 = new JButton(" Exit ");
+    		JButton btnNewButton_1 = new JButton("THE NIGHT AFTER CHRISTMAS");
     		
     		btnNewButton_1.addActionListener(new ActionListener() {
     			public void actionPerformed(ActionEvent e) {
-    				
+    				try {
+    					PrintWriter writer = new PrintWriter("the-chapter.txt","UTF-8");
+    					writer.println("THE NIGHT AFTER CHRISTMAS");
+    					writer.close();
+    				} catch (FileNotFoundException e1) {
+    					// TODO Auto-generated catch block
+    					e1.printStackTrace();
+    				} catch (UnsupportedEncodingException e1) {
+    					// TODO Auto-generated catch block
+    					e1.printStackTrace();
+    				} 
     				frame.dispose();
-    				
+    				MyJFrame n = new MyJFrame();
+    				n.main(null);
     			}
     		});
     		gbc.gridx = 0;
@@ -105,7 +126,29 @@ public class YesOrNo {
     		//add(btnNewButton_1);
     		
     		
+    		JButton btnNewButton_2 = new JButton("THE NIGHT BEFORE CHRISTMAS");
+    		btnNewButton_2.addActionListener(new ActionListener() {
+    			public void actionPerformed(ActionEvent e) {
+    				try {
+    					PrintWriter writer = new PrintWriter("the-chapter.txt","UTF-8");
+    					writer.println("THE NIGHT BEFORE CHRISTMAS");
+    					writer.close();
+    				} catch (FileNotFoundException e1) {
+    					// TODO Auto-generated catch block
+    					e1.printStackTrace();
+    				} catch (UnsupportedEncodingException e1) {
+    					// TODO Auto-generated catch block
+    					e1.printStackTrace();
+    				} 
+    				frame.dispose();
+    				MyJFrame n = new MyJFrame();
+    				n.main(null);
+    			}
+    		});
     		
+    		gbc.gridx = 0;
+    		gbc.gridy = 3;
+    		add(btnNewButton_2,gbc);
         }
     }
 
