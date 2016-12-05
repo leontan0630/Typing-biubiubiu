@@ -63,8 +63,8 @@ public class settingFrame{
             AbstractAction ebp = new AbstractAction(){
     			public void actionPerformed(ActionEvent e) {
     				frame.dispose();
-    				booksFrame n = new booksFrame();
-    				n.booksFrame();
+    				MyJFrame n = new MyJFrame();
+    				n.main(null);
     			}
     		};
     		JButton btnEasy = new JButton("  EASY  (E)  ");
@@ -82,6 +82,8 @@ public class settingFrame{
     		AbstractAction mbp = new AbstractAction(){
     			public void actionPerformed(ActionEvent e) {
     				frame.dispose();
+    				norJFrame n = new norJFrame();
+    				n.main(null);
     				//newFrame n = new newFrame();
     				//n.newWindow();
     			}
@@ -100,7 +102,10 @@ public class settingFrame{
     		
     		AbstractAction hbp = new AbstractAction(){
     			public void actionPerformed(ActionEvent e) {
+    				
     				frame.dispose();
+    				hardFrame n = new hardFrame();
+    				n.main(null);
     			}
     		};
     		JButton btnHard = new JButton("  HARD  (H)  ");
@@ -117,7 +122,10 @@ public class settingFrame{
     		
     		AbstractAction ibp = new AbstractAction(){
     			public void actionPerformed(ActionEvent e) {
+    				
     				frame.dispose();
+    				insaneFrame n = new insaneFrame();
+    				n.main(null);
     			}
     		};
     		JButton btnInsane = new JButton(" INSANE  (I) ");

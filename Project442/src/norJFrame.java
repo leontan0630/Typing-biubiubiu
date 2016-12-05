@@ -41,10 +41,10 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 
-public class insaneFrame extends JFrame {
+public class norJFrame extends JFrame {
 	private JLabel lblNewLabel;
 	private Drawing drawing;
-	private iniss canvas;
+	private norFrames canvas;
 	private int bulletFly;
 	private JLabel loose;
 	private String mix = new String();
@@ -54,13 +54,13 @@ public class insaneFrame extends JFrame {
 	int score = 0;
 	private JTextField textField;
 	private PrintWriter outputStream;
-	public insaneFrame() {
+	public norJFrame() {
 		setTitle("HeroDemo");
 		getContentPane().setBackground(Color.ORANGE);
         Box box = new Box(BoxLayout.Y_AXIS);
         box.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         box.add(Box.createVerticalGlue());
-        canvas = new iniss();
+        canvas = new norFrames();
         box.add(canvas);
         canvas.setLayout(null);
 	
@@ -310,7 +310,7 @@ public class insaneFrame extends JFrame {
 				btnCheck.addActionListener(ebp); 
 				btnCheck.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"onENTER");
 				btnCheck.getActionMap().put("onENTER", ebp);
-				canvas.enemy.setxVelo(-10);
+				canvas.enemy.setxVelo(-5);
 				
 				}
 				
@@ -337,7 +337,7 @@ public class insaneFrame extends JFrame {
 	        setLocation(150, 150);
 	        setVisible(true);
 	}
-	public iniss getCanvas(){
+	public norFrames getCanvas(){
 		return this.canvas;
 	}
 	public class Drawing extends Thread {
@@ -400,14 +400,14 @@ public class insaneFrame extends JFrame {
 
 	            @Override
 	            public void run() {
-	            	//insaneFrame main = new insaneFrame();
+	            	//norJFrame main = new norJFrame();
 	            	//main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	            }
 	        };
 	        javax.swing.SwingUtilities.invokeLater(r);
 	    }
 }
-class iniss extends JPanel {
+class norFrames extends JPanel {
 	
 
     private static final long serialVersionUID = 1L;
@@ -439,7 +439,7 @@ class iniss extends JPanel {
         g.fillRect(margin, margin, dim.width - margin * 2, dim.height - margin * 2);
     }*/
     
-    public iniss(){
+    public norFrames(){
     	super();
     	int margin = 0;
     	this.setBackground(Color.ORANGE);

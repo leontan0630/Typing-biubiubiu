@@ -64,6 +64,16 @@ public class booksFrame extends JFrame {
         JButton btnConfirm_1 = new JButton("CONFIRM");
         btnConfirm_1.setBounds(253, 319, 89, 23);
         leaderBoards_.add(btnConfirm_1);
+        
+        JButton btnBack = new JButton("BACK");
+        btnBack.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		Frame f = new Frame();
+        	}
+        });
+        btnBack.setBounds(156, 362, 97, 25);
+        leaderBoards_.add(btnBack);
         btnConfirm_1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

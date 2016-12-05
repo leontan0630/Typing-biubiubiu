@@ -77,8 +77,7 @@ public class guidFrame {
     		 AbstractAction bbp = new AbstractAction(){
      			public void actionPerformed(ActionEvent e) {
      				frame.dispose();
-	   				settingFrame n =  new settingFrame();
-	   				n.newWindow();
+	   				Frame f= new Frame();
      			}
      		};
      		

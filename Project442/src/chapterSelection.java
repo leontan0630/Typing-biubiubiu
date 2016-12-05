@@ -91,8 +91,8 @@ public class chapterSelection {
     					e1.printStackTrace();
     				} 
     				frame.dispose();
-    				MyJFrame n = new MyJFrame();
-    				n.main(null);
+    				settingFrame n = new settingFrame();
+    				n.newWindow();
     			}
     		});
     		
@@ -118,8 +118,8 @@ public class chapterSelection {
     					e1.printStackTrace();
     				} 
     				frame.dispose();
-    				MyJFrame n = new MyJFrame();
-    				n.main(null);
+    				settingFrame n = new settingFrame();
+    				n.newWindow();
     			}
     		});
     		gbc.gridx = 0;
@@ -145,14 +145,29 @@ public class chapterSelection {
     					e1.printStackTrace();
     				} 
     				frame.dispose();
-    				MyJFrame n = new MyJFrame();
-    				n.main(null);
+    				settingFrame n = new settingFrame();
+    				n.newWindow();
     			}
     		});
     		
     		gbc.gridx = 0;
     		gbc.gridy = 3;
     		add(btnNewButton_2,gbc);
+    		
+    		JButton back = new JButton("BACK");
+    		back.addActionListener(new ActionListener() {
+    			public void actionPerformed(ActionEvent e) {
+    				
+    				frame.dispose();
+    				booksFrame n = new booksFrame();
+    				n.booksFrame();
+    			}
+    		});
+    		
+    		gbc.gridx = 0;
+    		gbc.gridy = 4;
+    		add(back,gbc);
+    		
         }
     }
 

@@ -62,8 +62,8 @@ public class Frame {
 	        AbstractAction sbp = new AbstractAction(){
 	   			public void actionPerformed(ActionEvent e) {
 	   				frame.dispose();
-	   				guidFrame n =  new guidFrame();
-	   				n.newGuid();
+	   				booksFrame n =  new booksFrame();
+	   				n.booksFrame();
 		    				
     			}
     		};
@@ -117,7 +117,8 @@ public class Frame {
    		
     		AbstractAction gbp = new AbstractAction(){
     			public void actionPerformed(ActionEvent e) {
-   				//lblSomeTips.setText("Some tips !!!");
+   				guidFrame g = new guidFrame();
+   				g.newGuid();
    			}
     		};
     		JButton btnGuid = new JButton("GUIDE (G)");
